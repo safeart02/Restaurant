@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Restaurant Menu</title>
+	</head>
+			<body>
+
+				
+				<div class = "main">Repos Dans La Nourriture</div>
+				<div class ="bbb">
+    				<button onclick="scrollToSection('main_dish')">Main Dish</button><br><br>
+    				<button onclick="scrollToSection('vegetable')">Vegetable</button><br><br>
+    				<button onclick="scrollToSection('dessert')">Dessert</button><br><br>
+    				<button onclick="scrollToSection('drinks')">Drinks</button><br><br>
+    				<button onclick="scrollToSection('addons')">Add ons</button>
+				</div>
+				<div class = "main_dish">Main Dish</div>
+				<div class = "main_dish_menu">
+					<img src="img/SAC.jpg"><br>Shrimp Ala Carte: Php 6000 <br><br><br>
+					<img src="img/SCWMB.jpg"><br>Seasoned Crab with Melted Butter: Php 5500 <br><br><br>
+					<img src="img/GCM.jpg"><br>Grated Cheese on Macaroni: Php 4000 <br><br><br>
+					<img src="img/HGS.jpg"><br>Honey Glazed Steak: Php 6500 <br><br><br>
+					<img src="img/SCMS.jpg"><br>Seaside Clam with Maple Syrup: Php 4500 <br><br><br>
+				</div>
+				<div class = "vegetable">Vegetable</div>
+				<div class = "vegetable_menu">
+					<img src="img/PA.jpg"><br>Petite Asparagus: Php 2000 <br><br><br>
+					<img src="img/TMP.jpg"><br>Truffle Mashed Potatoes: Php 5000 <br><br><br>
+					<img src="img/RGB.jpg"><br>Roasted Galic Broccoli: Php 2000 <br><br><br>
+				</div>
+				<div class = "dessert">Dessert</div>
+				<div class = "dessert_menu">
+					<img src="img/VRD.jpg"><br>Velvet Raspberry Delight: Php 1000 <br><br><br>
+					<img src="img/DCVG.jpg"><br>Dark Chocolate Van Gogh: Php 1200 <br><br><br>
+					<img src="img/MTS.jpg"><br>Mango Truffle Souffle: Php 1400 <br><br><br>
+				</div>
+				<div class = "drinks">Drinks</div>
+				<div class = "drinks_menu">
+					<img src="img/BB.jpg"><br>Blueberry Breeze: Php 800 <br><br><br>
+					<img src="img/SE.jpg"><br>Strawberry Elixir: Php 880 <br><br><br>
+					<img src="img/CBF.jpg"><br>Cherry Blossom Fizz: Php 1000 <br><br><br>
+				</div>
+				<div class = "addons">Addons</div>
+				<div class = "addons_menu">
+					<img src="img/GHI.jpg"><br>Garlic Herb Infusion: Php 500 <br><br><br>
+					<img src="img/CLG.jpg"><br>Chili Lime Glaze: Php 450 <br><br><br>
+					<img src="img/RWD.jpg"><br>Red Wine Drizzle: Php 800 <br><br><br>
+				</div>
+
+				<button id="scrollToTopBtn" onclick="scrollToTop">&#9650;</button>
+			</body>
+</html>
+
+<style>
+body {
+		font-family: 'Century Gothic';
+        margin: 0;
+        padding: 0;
+	    text-align: center;
+		background-color: #93E0E0;
+        }
+
+.main {
+		font-family: 'Edwardian script ITC';
+        background-color: #FFD700;
+        color: #333;
+        padding: 10px;
+        font-size: 80px;
+	    text-align: center;
+        }
+.main_dish,
+.vegetable,
+.dessert,
+.drinks,
+.addons {
+        background-color: #F5F5F5;
+        color: #333;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 40px;
+        }
+
+		
+#scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+#scrollToTopBtn:hover {
+            background-color: #0056b3;
+        }
+
+.bbb {
+		position: fixed;
+		top: 200px;
+		left: 10px;
+		}
+</style>
+
+<script>
+function scrollToSection(sectionClass) {
+            var section = document.querySelector('.' + sectionClass);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+</script>
